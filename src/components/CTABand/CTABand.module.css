@@ -1,0 +1,132 @@
+.ctaBand {
+    padding: 56px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.band {
+    border-radius: var(--radius-xl);
+    padding: 44px 36px;
+    background: linear-gradient(135deg, rgba(34, 211, 238, .10), rgba(167, 139, 250, .10));
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .band {
+        animation: pulse 4s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+.desc {
+    margin-bottom: 32px;
+    font-size: 20px;
+    color: var(--text-2);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .12);
+    color: var(--text-1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnSecondary:hover {
+    background: rgba(255, 255, 255, .12);
+    border-color: rgba(255, 255, 255, .20);
+    transform: translateY(-2px);
+}
+
+.btnSecondary svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btnEmail:hover {
+    background: rgba(34, 211, 238, .15);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btnWhatsapp:hover {
+    background: rgba(37, 211, 102, .15);
+    border-color: #25D366;
+    color: #25D366;
+}
+
+.dividerText {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .ctaBand {
+        padding: 36px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .band {
+        padding: 32px 24px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .dividerText {
+        display: none;
+    }
+
+    .btnSecondary {
+        width: 100%;
+        max-width: 280px;
+    }
+}

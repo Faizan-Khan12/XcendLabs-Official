@@ -1,0 +1,273 @@
+.navbar {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: 8px 16px;
+    background: rgba(11, 18, 36, .70);
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .15);
+    transition: all 0.3s ease;
+    max-width: calc(100vw - 32px);
+}
+
+.navbar.scrolled {
+    background: rgba(11, 18, 36, .85);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .2);
+}
+
+.navBarFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    padding: 0 8px;
+    gap: 8px;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.navLogo:hover {
+    transform: scale(1.05);
+}
+
+.logoImg {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+.navLinks li {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.navLink {
+    color: var(--text-2);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    transition: all .25s ease;
+    white-space: nowrap;
+    display: block;
+}
+
+.navLink:hover,
+.navLink:focus {
+    color: var(--text-1);
+    background: rgba(255, 255, 255, .05);
+}
+
+.navLink.active {
+    color: var(--accent);
+    background: rgba(34, 211, 238, .08);
+}
+
+.bookCallBtn {
+    background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end));
+    color: #001018 !important;
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, .30);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.bookCallBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, .40);
+    background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end));
+    color: #001018 !important;
+}
+
+/* Hamburger Menu Toggle */
+.navToggle {
+    display: none;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1001;
+}
+
+.navToggle span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navToggle span:nth-child(1) {
+    top: 6px;
+}
+
+.navToggle span:nth-child(2) {
+    top: 11px;
+}
+
+.navToggle span:nth-child(3) {
+    top: 16px;
+}
+
+/* X Animation when active */
+.navToggle.active span:nth-child(1) {
+    top: 11px;
+    transform: rotate(45deg);
+}
+
+.navToggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.navToggle.active span:nth-child(3) {
+    top: 11px;
+    transform: rotate(-45deg);
+}
+
+/* Tablet breakpoint - show hamburger menu earlier */
+/* Tablet breakpoint - show hamburger menu earlier */
+@media (max-width: 900px) {
+    .navbar {
+        width: 100%;
+        max-width: 320px;
+        padding: 12px 24px;
+        border-radius: 100px;
+        top: 20px;
+        background: rgba(4, 7, 16, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navBarFlex {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .navToggle {
+        display: block;
+        transform: scale(0.9);
+    }
+
+    .logoImg {
+        height: 20px;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%) scaleY(0);
+        transform-origin: top;
+        width: calc(100vw - 40px);
+        max-width: 360px;
+        background: rgba(11, 18, 36, .98);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+        overflow: hidden;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, .10);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .navLinks.open {
+        transform: translateX(-50%) scaleY(1);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navLinks li {
+        width: 100%;
+    }
+
+    .navLink {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 18px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, .04);
+        font-size: 16px;
+        border-radius: 0;
+        color: var(--text-2);
+    }
+
+    .navLink:active {
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    .navLinks li:last-child .navLink {
+        border-bottom: none;
+    }
+
+    /* Hide the book call button inside the menu list and place it at bottom if needed, 
+       but for now conforming to standard mobile menu structure */
+    .bookCallBtn {
+        margin: 16px 20px 20px;
+        width: calc(100% - 40px);
+        text-align: center;
+        padding: 16px;
+        font-size: 15px;
+        display: block;
+    }
+}
+
+/* Mobile - smaller adjustments */
+@media (max-width: 480px) {
+    .navbar {
+        top: 10px;
+        padding: 6px 10px;
+    }
+
+    .logoImg {
+        height: 22px;
+    }
+
+    .navLinks {
+        width: calc(100vw - 32px);
+        top: 52px;
+    }
+}
