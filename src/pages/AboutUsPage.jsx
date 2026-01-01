@@ -4,27 +4,21 @@ import styles from './AboutUsPage.module.css';
 const team = [
     {
         name: 'Sharib Sufi',
-        role: 'Founder',
+        role: 'Founder & CEO',
         bio: 'Visionary leader with 10+ years in AI and automation. Passionate about helping businesses scale through technology.',
-        avatar: 'SS',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/sharib-sufi-398964222'
     },
     {
         name: 'Waris Rawa',
-        role: 'Engineer',
+        role: 'Head of Engineering',
         bio: 'Full-stack expert specializing in building high-performance web applications and AI-driven systems.',
-        avatar: 'WR',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/waris-rawa-41959a216'
     },
     {
         name: 'Faizan Khan',
         role: 'Growth Strategist',
         bio: 'Data-driven marketer who has helped 50+ companies achieve exponential growth through automation.',
-        avatar: 'FK',
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/faizan-khan-5b6b0b1b0'
     }
 ];
 
@@ -57,11 +51,7 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const TwitterIcon = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-);
+
 
 const AboutUsPage = () => {
     return (
@@ -135,21 +125,12 @@ const AboutUsPage = () => {
                     <div className={styles.teamGrid}>
                         {team.map((member, index) => (
                             <article key={index} className={styles.teamCard}>
-                                <div className={styles.avatarWrapper}>
-                                    <div className={styles.avatarGlow}></div>
-                                    <div className={styles.avatar}>
-                                        {member.avatar}
-                                    </div>
-                                </div>
                                 <h3 className={styles.memberName}>{member.name}</h3>
                                 <p className={styles.memberRole}>{member.role}</p>
                                 <p className={styles.memberBio}>{member.bio}</p>
                                 <div className={styles.socials}>
                                     <a href={member.linkedin} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                         <LinkedInIcon />
-                                    </a>
-                                    <a href={member.twitter} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                        <TwitterIcon />
                                     </a>
                                 </div>
                             </article>
