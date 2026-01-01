@@ -5,25 +5,19 @@ const team = [
         name: 'Sharib Sufi',
         role: 'Founder & CEO',
         bio: 'Visionary leader with 10+ years in AI and automation. Passionate about helping businesses scale through technology.',
-        avatar: null, // Placeholder - will use gradient
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/sharib-sufi-398964222'
     },
     {
         name: 'Waris Rawa',
         role: 'Head of Engineering',
         bio: 'Full-stack expert specializing in building high-performance web applications and AI-driven systems.',
-        avatar: null,
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/waris-rawa-41959a216'
     },
     {
         name: 'Faizan Khan',
         role: 'Growth Strategist',
         bio: 'Data-driven marketer who has helped 50+ companies achieve exponential growth through automation.',
-        avatar: null,
-        linkedin: 'https://linkedin.com',
-        twitter: 'https://twitter.com'
+        linkedin: 'https://www.linkedin.com/in/faizan-khan-5b6b0b1b0'
     }
 ];
 
@@ -33,11 +27,7 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const TwitterIcon = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-);
+
 
 const Team = () => {
     return (
@@ -50,31 +40,12 @@ const Team = () => {
                 <div className={styles.grid}>
                     {team.map((member, index) => (
                         <article key={index} className={styles.card}>
-                            <div className={styles.avatarWrapper}>
-                                <div className={styles.avatarGlow}></div>
-                                {member.avatar ? (
-                                    <img src={member.avatar} alt={member.name} className={styles.avatar} />
-                                ) : (
-                                    <div className={styles.avatar} style={{
-                                        display: 'grid',
-                                        placeItems: 'center',
-                                        fontSize: '40px',
-                                        fontWeight: '700',
-                                        color: 'var(--accent)'
-                                    }}>
-                                        {member.name.split(' ').map(n => n[0]).join('')}
-                                    </div>
-                                )}
-                            </div>
                             <h3 className={styles.name}>{member.name}</h3>
                             <p className={styles.role}>{member.role}</p>
                             <p className={styles.bio}>{member.bio}</p>
                             <div className={styles.socials}>
                                 <a href={member.linkedin} className={styles.socialLink} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                     <LinkedInIcon />
-                                </a>
-                                <a href={member.twitter} className={styles.socialLink} aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                                    <TwitterIcon />
                                 </a>
                             </div>
                         </article>
