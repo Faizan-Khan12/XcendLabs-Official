@@ -18,7 +18,7 @@ const team = [
         name: 'Faizan Khan',
         role: 'Growth Strategist',
         bio: 'Data-driven marketer who has helped 50+ companies achieve exponential growth through automation.',
-        linkedin: 'https://www.linkedin.com/in/faizan-khan-5b6b0b1b0'
+        linkedin: 'https://www.linkedin.com/in/faizan-farooq-7aab44302'
     }
 ];
 
