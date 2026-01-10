@@ -208,7 +208,7 @@ const Home = () => {
                             Let's design and deploy the automations and digital systems that set you apart.
                         </p>
                         <div className={styles.ctaButtons}>
-                            <a className="btn btn-primary" href="https://calendly.com/xcendlabs/30min" target="_blank" rel="noopener noreferrer">
+                            <a className="btn btn-primary" href="https://calendly.com/xcendlabs/30min">
                                 Book a Call
                             </a>
                             <span className={styles.dividerText}>or</span>

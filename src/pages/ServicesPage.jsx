@@ -121,7 +121,7 @@ const ServicesPage = () => {
                     <div className={styles.cta}>
                         <h2>Ready to Get Started?</h2>
                         <p>Book a free strategy call and let's discuss how we can help.</p>
-                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary">
                             Book Your Free Call →
                         </a>
                     </div>

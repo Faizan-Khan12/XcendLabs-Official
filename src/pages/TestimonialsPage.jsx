@@ -116,7 +116,7 @@ const TestimonialsPage = () => {
                     <div className={styles.cta}>
                         <h2>Ready to Join Them?</h2>
                         <p>Start your growth journey with a free strategy call.</p>
-                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary">
                             Book Your Free Call →
                         </a>
                     </div>

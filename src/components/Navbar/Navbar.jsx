@@ -112,8 +112,6 @@ const Navbar = () => {
             <a
               href="https://calendly.com/xcendlabs/30min"
               className={styles.bookCallBtn}
-              target="_blank"
-              rel="noopener noreferrer"
               onClick={closeMenu}
             >
               Book a Call

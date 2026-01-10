@@ -123,7 +123,7 @@ const WhyUsPage = () => {
                     <div className={styles.cta}>
                         <h2>See the Difference Yourself</h2>
                         <p>Book a call and experience our approach firsthand.</p>
-                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://calendly.com/xcendlabs/30min" className="btn btn-primary">
                             Book Your Strategy Call →
                         </a>
                     </div>
