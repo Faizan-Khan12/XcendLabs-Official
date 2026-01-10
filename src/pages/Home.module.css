@@ -38,10 +38,27 @@
     text-align: left;
 }
 
+@media (max-width: 1024px) {
+    .servicesGrid {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .servicesGrid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicesGrid {
+        gap: 16px;
+    }
+
+    .sectionDesc {
+        font-size: 16px;
+        margin-bottom: 32px;
     }
 }
 

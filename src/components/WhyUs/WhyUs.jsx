@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Layout, Users, TrendingUp, Cpu, CreditCard } from 'lucide-react';
 import styles from './WhyUs.module.css';

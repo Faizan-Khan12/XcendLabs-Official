@@ -200,3 +200,47 @@
         padding: 24px;
     }
 }
+
+@media (max-width: 480px) {
+    .page {
+        padding-top: 60px;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .testimonialCard {
+        padding: 20px;
+    }
+
+    .quote {
+        font-size: 14px;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .statsGrid {
+        gap: 32px;
+    }
+
+    .statNumber {
+        font-size: 28px;
+    }
+
+    .statLabel {
+        font-size: 14px;
+    }
+
+    .cta {
+        padding: 28px 20px;
+    }
+
+    .cta p {
+        font-size: 16px;
+    }
+}

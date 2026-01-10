@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
@@ -46,10 +46,20 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
-  // Close menu on route change
+  // Close menu on route change - this is intentional behavior for navigation
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  const isInitialMount = useRef(true);
   useEffect(() => {
-    setIsMenuOpen(false);
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    // Only close menu and scroll if route actually changed (not initial mount)
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
     window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   const navItems = [

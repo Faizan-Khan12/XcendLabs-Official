@@ -200,8 +200,57 @@
         font-size: 17px;
     }
 
-    .comparisonCard,
+    .featureCard,
     .cta {
         padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding-top: 60px;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .sectionDesc {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .featureCard {
+        padding: 20px;
+    }
+
+    .iconWrapper {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 18px;
+    }
+
+    .featureCard h3 {
+        font-size: 18px;
+    }
+
+    .featureCard p {
+        font-size: 14px;
+    }
+
+    .processCard {
+        padding: 20px;
+    }
+
+    .stepNumber {
+        font-size: 26px;
+    }
+
+    .cta {
+        padding: 28px 20px;
+    }
+
+    .cta p {
+        font-size: 16px;
     }
 }

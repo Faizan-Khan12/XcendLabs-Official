@@ -86,4 +86,38 @@
     .container {
         padding: 0 20px;
     }
+
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--header-h) + var(--header-offset, 0px) + 60px);
+        padding-bottom: 60px;
+    }
+
+    .lead {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding-top: calc(var(--header-h) + var(--header-offset, 0px) + 40px);
+        padding-bottom: 40px;
+    }
+
+    .eyebrow {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .cta {
+        margin-top: 20px;
+    }
 }

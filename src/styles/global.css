@@ -454,6 +454,8 @@ img {
   /* GPU acceleration for smooth animations */
   transform: translateZ(0);
   backface-visibility: hidden;
+  /* CSS containment for better performance */
+  contain: layout style paint;
 }
 
 .card:hover {
