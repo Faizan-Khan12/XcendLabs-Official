@@ -73,26 +73,7 @@ const testimonials = [
 ];
 
 // Team Members Data: Founder, Engineer, and Strategist
-const team = [
-    {
-        name: 'Sharib Sufi',
-        role: 'Founder',
-        bio: 'Visionary leader with 10+ years in AI and automation.',
-        avatar: 'SS',
-    },
-    {
-        name: 'Waris Rawa',
-        role: 'Engineer',
-        bio: 'Full-stack expert specializing in high-performance web apps.',
-        avatar: 'WR',
-    },
-    {
-        name: 'Faizan Khan',
-        role: 'Growth Strategist',
-        bio: 'Data-driven marketer who has helped 50+ companies scale.',
-        avatar: 'FK',
-    },
-];
+
 
 const Home = () => {
     const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
@@ -149,7 +130,11 @@ const Home = () => {
                             <span className={styles.headerUs}><CheckCircle size={16} style={{ marginRight: '4px', verticalAlign: 'middle' }} /> XcendLabs</span>
                         </div>
                         {whyUsPoints.map((point, i) => (
-                            <div key={i} className={styles.comparisonRow}>
+                            <div
+                                key={i}
+                                className={styles.comparisonRow}
+                                style={{ animationDelay: `${i * 0.15 + 0.2}s` }}
+                            >
                                 <span className={styles.rowNum}>{i + 1}</span>
                                 <span className={styles.rowOthers}>{point.others}</span>
                                 <span className={styles.rowUs}>{point.us}</span>
@@ -193,30 +178,7 @@ const Home = () => {
             </section>
             <div className="divider"></div>
 
-            {/* Team Section */}
-            <section id="team" className={`section theme-b ${styles.teamSection}`}>
-                <div className="container">
-                    <span className={styles.eyebrow}>Our Team</span>
-                    <h2 className={styles.sectionTitle}>Meet the Experts</h2>
-                    <p className={styles.sectionDesc}>
-                        A team of passionate technologists on a mission to help businesses thrive.
-                    </p>
-                    <div className={styles.teamGrid}>
-                        {team.map((member, i) => (
-                            <div key={i} className={styles.teamCard}>
-                                <div className={styles.teamAvatar}>{member.avatar}</div>
-                                <h3 className={styles.teamName}>{member.name}</h3>
-                                <span className={styles.teamRole}>{member.role}</span>
-                                <p className={styles.teamBio}>{member.bio}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <Link to="/about" className={`btn btn-primary ${styles.learnMoreBtn}`}>
-                        Our Story →
-                    </Link>
-                </div>
-            </section>
-            <div className="divider"></div>
+
 
             {/* Final CTA Section: Includes Calendly, Email, and WhatsApp links */}
             <section className={`section theme-a ${styles.ctaSection}`}>

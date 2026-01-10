@@ -57,7 +57,7 @@ const Navbar = () => {
     { to: '/services', label: 'Services' },
     { to: '/why-us', label: 'Why Us' },
     { to: '/testimonials', label: 'Testimonials' },
-    { to: '/about', label: 'About Us' },
+
   ];
 
   const isActive = (path) => {

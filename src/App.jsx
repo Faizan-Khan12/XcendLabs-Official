@@ -9,7 +9,7 @@ const Home = lazy(() => import('./pages/Home'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const WhyUsPage = lazy(() => import('./pages/WhyUsPage'));
 const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage'));
-const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
+
 
 // Loading Fallback
 const LoadingSpinner = () => (
@@ -44,7 +44,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/why-us" element={<WhyUsPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
-          <Route path="/about" element={<AboutUsPage />} />
+
         </Routes>
       </Suspense>
 
