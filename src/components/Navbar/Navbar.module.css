@@ -101,6 +101,25 @@
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bookCallBtn {
+    background: linear-gradient(135deg, var(--blue-gradient-start), var(--blue-gradient-end));
+    color: #001018 !important;
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, .30);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .bookCallBtn:hover {

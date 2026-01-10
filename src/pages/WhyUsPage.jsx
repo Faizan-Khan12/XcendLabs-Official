@@ -1,24 +1,48 @@
-import { XCircle, CheckCircle, X, Check } from 'lucide-react';
+import { Cpu, TrendingUp, Sparkles, Unlock, Zap, BarChart3, Shield, Globe } from 'lucide-react';
 import styles from './WhyUsPage.module.css';
 
-const comparison = {
-    others: [
-        'Generic solutions that don\'t fit',
-        'Slow turnaround times',
-        'Communication gaps',
-        'Focus on deliverables, not outcomes',
-        'Cookie-cutter strategies',
-        'Unpredictable pricing',
-    ],
-    xcendlabs: [
-        'Custom solutions for your business',
-        'Fast, agile delivery',
-        'Dedicated team & transparent updates',
-        'Revenue-first approach',
-        'Data-driven, tailored strategies',
-        'Clear, upfront pricing',
-    ],
-};
+const features = [
+    {
+        title: 'Bespoke Engineering',
+        desc: 'We don\'t use templates. We build custom, scalable architectures tailored exactly to your operational needs.',
+        icon: <Cpu size={24} />,
+    },
+    {
+        title: 'Revenue Velocity',
+        desc: 'Every system we build is optimized for one thing: accelerating your business growth and ROI.',
+        icon: <TrendingUp size={24} />,
+    },
+    {
+        title: 'AI-Native Integration',
+        desc: 'Leveraging the latest in artificial intelligence to automate workflows and create intelligent user experiences.',
+        icon: <Sparkles size={24} />,
+    },
+    {
+        title: 'Radical Transparency',
+        desc: 'No account managers filtering the truth. Direct access to your engineering team with real-time updates.',
+        icon: <Unlock size={24} />,
+    },
+    {
+        title: 'Future-Proof Stack',
+        desc: 'We build on modern, robust technologies that scale with you, ensuring long-term reliability and performance.',
+        icon: <Zap size={24} />,
+    },
+    {
+        title: 'Data-Driven Strategy',
+        desc: 'Every decision is backed by analytics. We turn raw data into actionable insights to refine your growth engine.',
+        icon: <BarChart3 size={24} />,
+    },
+    {
+        title: 'Enterprise Security',
+        desc: 'Security isn\'t an afterthought. We implement bank-grade encryption and compliance standards from day one.',
+        icon: <Shield size={24} />,
+    },
+    {
+        title: 'Global Scalability',
+        desc: 'Systems designed to handle millions of users. We build with global distribution and high availability in mind.',
+        icon: <Globe size={24} />,
+    }
+];
 
 const process = [
     {
@@ -58,32 +82,20 @@ const WhyUsPage = () => {
 
             <div className="divider"></div>
 
-            <section className={`section ${styles.comparisonSection}`}>
+            <section className={`section ${styles.differenceSection}`}>
                 <div className="container">
                     <h2 className={styles.sectionTitle}>The XcendLabs Difference</h2>
-                    <div className={styles.comparisonGrid}>
-                        <div className={styles.comparisonCard}>
-                            <h3 className={styles.cardTitleBad}><XCircle size={18} style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Other Agencies</h3>
-                            <ul className={styles.list}>
-                                {comparison.others.map((item, i) => (
-                                    <li key={i}>
-                                        <span className={styles.bad}><X size={16} /></span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className={`${styles.comparisonCard} ${styles.highlight}`}>
-                            <h3 className={styles.cardTitleGood}><CheckCircle size={18} style={{ marginRight: '6px', verticalAlign: 'middle' }} /> XcendLabs</h3>
-                            <ul className={styles.list}>
-                                {comparison.xcendlabs.map((item, i) => (
-                                    <li key={i}>
-                                        <span className={styles.good}><Check size={16} /></span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                    <p className={styles.sectionDesc}>We bridge the gap between complex technology and tangible business results.</p>
+                    <div className={styles.featureGrid}>
+                        {features.map((feature, index) => (
+                            <div key={index} className={styles.featureCard}>
+                                <div className={styles.iconWrapper}>
+                                    {feature.icon}
+                                </div>
+                                <h3>{feature.title}</h3>
+                                <p>{feature.desc}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

@@ -1,28 +1,38 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { Zap, Layout, Users, TrendingUp, Cpu, CreditCard } from 'lucide-react';
 import styles from './WhyUs.module.css';
 
-const comparisonData = [
+const premiumFeatures = [
     {
-        bad: 'Generic, one‑size‑fits‑all packages',
-        good: 'Custom AI‑driven systems for your stack'
+        icon: <Cpu />,
+        title: 'Bespoke AI Architecture',
+        desc: 'Custom-engineered systems designed solely for your unique stack and scale.'
     },
     {
-        bad: 'Slow delivery and stale playbooks',
-        good: 'Lightning‑fast shipping and iteration'
+        icon: <Zap />,
+        title: 'Rapid Agile Delivery',
+        desc: 'High-velocity execution with continuous iteration and immediate impact.'
     },
     {
-        bad: 'Minimal automation; heavy manual work',
-        good: 'End‑to‑end automation for real efficiency'
+        icon: <Layout />,
+        title: 'End-to-End Automation',
+        desc: 'Seamless workflows that eliminate manual bottlenecks and drive efficiency.'
     },
     {
-        bad: 'Reactive comms, limited ownership',
-        good: 'Proactive communication and ownership'
+        icon: <Users />,
+        title: 'Dedicated Partnership',
+        desc: 'Proactive ownership with a team that integrates deep into your vision.'
     },
     {
-        bad: 'Vague metrics, weak ROI',
-        good: 'Clear KPIs, measurable ROI'
+        icon: <TrendingUp />,
+        title: 'Revenue-First Approach',
+        desc: 'Strategies strictly aligned with clear KPIs and measurable ROI.'
+    },
+    {
+        icon: <CreditCard />,
+        title: 'Transparent Pricing',
+        desc: 'Clear, upfront structures with no hidden costs or surprises.'
     }
 ];
 
@@ -31,108 +41,73 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1
+            staggerChildren: 0.1,
+            delayChildren: 0.2
         }
     }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
 
 const WhyUs = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-
     return (
         <section id="why" className={`${styles.whyUs} section theme-c`}>
             <div className={styles.container}>
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className={styles.sectionTitle}
-                >
-                    Raising the Bar for Business Growth
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className={styles.sectionDesc}
-                >
-                    What sets us apart - beyond pretty decks.
-                </motion.p>
-
-                <div className={styles.compare}>
-                    {/* Other Agencies Card */}
+                <div className={styles.header}>
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className={styles.logoWrapper}
+                    >
+                        <img src="/xcendlabs logo.png" alt="XcendLabs" className={styles.heroLogo} />
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className={styles.sectionTitle}
+                    >
+                        The XcendLabs Standard
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className={styles.card}
+                        className={styles.sectionDesc}
                     >
-                        <div className={styles.cardHeader}>
-                            <h3 className={styles.cardTitle}>Other Agencies</h3>
-                        </div>
-                        <ul className={styles.list}>
-                            {comparisonData.map((item, index) => (
-                                <li
-                                    key={index}
-                                    className={`${styles.listItem} ${styles.isBad} ${hoveredIndex !== null && hoveredIndex === index
-                                            ? styles.active
-                                            : hoveredIndex !== null
-                                                ? styles.dimmed
-                                                : ''
-                                        }`}
-                                >
-                                    <span className={`${styles.mark} ${styles.markBad}`}>
-                                        <X />
-                                    </span>
-                                    <span>{item.bad}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
-                    {/* XcendLabs Highlights Card */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className={`${styles.card} ${styles.cardHighlight}`}
-                    >
-                        <div className={styles.cardHeader}>
-                            <h3 className={`${styles.cardTitle} ${styles.cardTitleHighlight}`}>XcendLabs</h3>
-                        </div>
-                        <motion.ul
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            className={styles.list}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                        >
-                            {comparisonData.map((item, index) => (
-                                <motion.li
-                                    key={index}
-                                    variants={itemVariants}
-                                    className={`${styles.listItem} ${styles.isGood}`}
-                                    onMouseEnter={() => setHoveredIndex(index)}
-                                >
-                                    <span className={`${styles.mark} ${styles.markGood}`}>
-                                        <Check />
-                                    </span>
-                                    <span>{item.good}</span>
-                                </motion.li>
-                            ))}
-                        </motion.ul>
-                    </motion.div>
+                        We don't just deliver projects; we engineer outcomes using elite tech and strategy.
+                    </motion.p>
                 </div>
+
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className={styles.featuresGrid}
+                >
+                    {premiumFeatures.map((feature, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            className={styles.featureCard}
+                        >
+                            <div className={styles.iconWrapper}>
+                                {feature.icon}
+                            </div>
+                            <h3 className={styles.featureTitle}>{feature.title}</h3>
+                            <p className={styles.featureDesc}>{feature.desc}</p>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );

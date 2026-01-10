@@ -76,7 +76,10 @@ const Services = () => {
                 </p>
                 <div className={styles.grid}>
                     {services.map((service, index) => (
-                        <article key={index} className={styles.card}>
+                        <article
+                            key={index}
+                            className={styles.card}
+                        >
                             <div className={styles.icon} aria-hidden="true">
                                 {service.icon}
                             </div>

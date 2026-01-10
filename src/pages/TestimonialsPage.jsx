@@ -3,10 +3,10 @@ import styles from './TestimonialsPage.module.css';
 
 const testimonials = [
     {
-        name: 'Sarah Mitchell',
-        role: 'CEO, TechStart Inc.',
-        text: 'XcendLabs transformed our entire sales process with AI automation. We\'re now closing deals 3x faster with half the manual work. Their team truly understands what it takes to scale.',
-        avatar: 'SM',
+        name: 'Irfan Khan',
+        role: <>Co-founder, <a href="https://tourbyte.in" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Tour Byte</a></>,
+        text: 'XcendLabs built us a travel website with lead generation and management using CRMs. The results have been outstanding.',
+        avatar: 'IK',
         rating: 5,
     },
     {
@@ -65,7 +65,10 @@ const TestimonialsPage = () => {
                 <div className="container">
                     <div className={styles.grid}>
                         {testimonials.map((testimonial, index) => (
-                            <article key={index} className={styles.testimonialCard}>
+                            <article
+                                key={index}
+                                className={styles.testimonialCard}
+                            >
                                 <div className={styles.stars}>
                                     {[...Array(testimonial.rating)].map((_, i) => (
                                         <Star key={i} className={styles.star} size={16} fill="currentColor" />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bot, Monitor, BarChart3, Rocket, XCircle, CheckCircle, Check, Star } from 'lucide-react';
+import { Bot, Monitor, BarChart3, Rocket, Check, Star, Zap, ShieldCheck, TrendingUp, Layers } from 'lucide-react';
 import Hero from '../components/Hero/Hero';
 import Stats from '../components/Stats/Stats';
 import WhatsAppModal from '../components/WhatsAppModal/WhatsAppModal';
@@ -36,21 +36,37 @@ const services = [
     },
 ];
 
-// Why Us comparison
-const whyUsPoints = [
-    { us: 'Custom solutions for your business', others: 'Generic templates that don\'t fit' },
-    { us: 'Revenue-first approach', others: 'Focus on deliverables, not outcomes' },
-    { us: 'Fast, agile delivery', others: 'Slow turnaround times' },
-    { us: 'Dedicated team & transparent updates', others: 'Communication gaps' },
+// Value Propositions
+const valueProps = [
+    {
+        title: 'Revenue-First Approach',
+        desc: 'We don\'t just build "pretty" things. Every line of code and pixel is optimized to drive tangible business growth.',
+        icon: <TrendingUp size={24} />,
+    },
+    {
+        title: 'Bespoke Engineering',
+        desc: 'No cookie-cutter templates. We architect custom, scalable solutions tailored to your specific operational needs.',
+        icon: <Layers size={24} />,
+    },
+    {
+        title: 'Rapid Velocity',
+        desc: 'Speed matters. Our agile workflows ensure we ship high-quality solutions 2x faster than traditional agencies.',
+        icon: <Zap size={24} />,
+    },
+    {
+        title: 'Radical Transparency',
+        desc: 'Direct access to your engineering team. No account managers, no fluff—just clear, honest communication.',
+        icon: <ShieldCheck size={24} />,
+    },
 ];
 
 // Testimonials Data: Client reviews and success stories
 const testimonials = [
     {
-        name: 'Sarah Mitchell',
-        role: 'CEO, TechStart Inc.',
-        text: 'XcendLabs transformed our entire sales process with AI automation. We\'re now closing deals 3x faster with half the manual work.',
-        avatar: 'SM',
+        name: 'Irfan Khan',
+        role: <>Co-founder, <a href="https://tourbyte.in" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>Tour Byte</a></>,
+        text: 'XcendLabs built us a travel website with lead generation and management using CRMs. The results have been outstanding.',
+        avatar: 'IK',
     },
     {
         name: 'Michael Chen',
@@ -96,7 +112,10 @@ const Home = () => {
                     </p>
                     <div className={styles.servicesGrid}>
                         {services.map((service, i) => (
-                            <div key={i} className={styles.serviceCard}>
+                            <div
+                                key={i}
+                                className={styles.serviceCard}
+                            >
                                 <span className={styles.serviceIcon}>{service.icon}</span>
                                 <h3>{service.title}</h3>
                                 <p className={styles.serviceDesc}>{service.desc}</p>
@@ -121,23 +140,20 @@ const Home = () => {
                     <span className={styles.eyebrow}>Why Choose Us</span>
                     <h2 className={styles.sectionTitle}>The XcendLabs Difference</h2>
                     <p className={styles.sectionDesc}>
-                        We don't just deliver — we partner with you to drive real business outcomes.
+                        We provide the technical edge you need to dominate your market.
                     </p>
-                    <div className={styles.comparisonTable}>
-                        <div className={styles.comparisonHeader}>
-                            <span></span>
-                            <span className={styles.headerOthers}><XCircle size={16} style={{ marginRight: '4px', verticalAlign: 'middle' }} /> Other Agencies</span>
-                            <span className={styles.headerUs}><CheckCircle size={16} style={{ marginRight: '4px', verticalAlign: 'middle' }} /> XcendLabs</span>
-                        </div>
-                        {whyUsPoints.map((point, i) => (
+                    <div className={styles.valueGrid}>
+                        {valueProps.map((prop, i) => (
                             <div
                                 key={i}
-                                className={styles.comparisonRow}
-                                style={{ animationDelay: `${i * 0.15 + 0.2}s` }}
+                                className={styles.valueCard}
+                                style={{ animationDelay: `${i * 0.1}s` }}
                             >
-                                <span className={styles.rowNum}>{i + 1}</span>
-                                <span className={styles.rowOthers}>{point.others}</span>
-                                <span className={styles.rowUs}>{point.us}</span>
+                                <div className={styles.valueIcon}>
+                                    {prop.icon}
+                                </div>
+                                <h3>{prop.title}</h3>
+                                <p>{prop.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -158,7 +174,10 @@ const Home = () => {
                     </p>
                     <div className={styles.testimonialsGrid}>
                         {testimonials.map((t, i) => (
-                            <div key={i} className={styles.testimonialCard}>
+                            <div
+                                key={i}
+                                className={styles.testimonialCard}
+                            >
                                 <div className={styles.stars}><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /></div>
                                 <blockquote className={styles.quote}>"{t.text}"</blockquote>
                                 <div className={styles.author}>
